@@ -20,7 +20,12 @@ st.sidebar.text(
 grev = st.sidebar.number_input(
     'greV'
 )
-grep = st.sidebar.number_input(
-    'greV'
+greq = st.sidebar.number_input(
+    'greQ'
 )
+
+greq = st.sidebar.number_input(
+    'greA'
+)
+
 
