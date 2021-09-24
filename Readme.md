@@ -5,6 +5,6 @@
 ### Muhammed Nihal KV
 To run:
 ```
-git clone "link"
+git clone https://github.com/christopher-2000/BTP.git
 streamlit run main.py
 ```
