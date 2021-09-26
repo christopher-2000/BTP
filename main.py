@@ -20,16 +20,16 @@ cgpa = st.sidebar.number_input(
 st.sidebar.text(
     'Enter your GRE scores'
 )
-grev = st.sidebar.number_input(
+greV = st.sidebar.number_input(
     'greV'
 )
-greq = st.sidebar.number_input(
+greQ = st.sidebar.number_input(
     'greQ'
 )
 
-greq = st.sidebar.number_input(
+greA = st.sidebar.number_input(
     'greA'
 )
 if st.sidebar.button('Recommend Universities') is True:
-       recommend()
+       recommend([greV,greQ,greA,cgpa])
 display_top()
