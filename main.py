@@ -1,5 +1,8 @@
 import streamlit as st
 from options import *
+from CF import *
+from CBF import *
+from find_colleges import*
 st.write("""
 # University Recommendation System
 ### Btech Project 
@@ -27,5 +30,6 @@ greq = st.sidebar.number_input(
 greq = st.sidebar.number_input(
     'greA'
 )
-
-
+if st.sidebar.button('Recommend Universities') is True:
+       recommend()
+display_top()
