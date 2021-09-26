@@ -1,6 +1,6 @@
 import streamlit as st
 from pandas import read_csv
-data = read_csv("cf_data.csv")
+data = read_csv("data/cf_data.csv")
 
 def recommend():
     st.text("Recommended List of Colleges")

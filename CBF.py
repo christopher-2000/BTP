@@ -3,7 +3,7 @@ import streamlit as st
 
 from pandas import read_csv
 import streamlit as st
-data = read_csv("cbf_data.csv",encoding='ISO-8859-1')
+data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
 def display_top():
     st.markdown("Top 5 Universites according to QS world rankings")
