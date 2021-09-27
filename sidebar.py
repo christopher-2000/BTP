@@ -3,11 +3,9 @@ from options import *
 from CF import *
 from CBF import *
 from find_colleges import*
+
 def sidebar():
-    st.write("""
-    # University Recommendation System
-    ### Btech Project 
-    """)
+    
     name = st.sidebar.text_input(
         'Enter your name')
 

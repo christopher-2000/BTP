@@ -15,6 +15,7 @@ def root_sum(x):
 def cosine_sim(x,y):
     return dot(x,y)/(root_sum(x)*root_sum(y))
 
-
+def pearson(x,y):
+    pass
 
 
