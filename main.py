@@ -1,5 +1,6 @@
 from sidebar import*
 from main_page import*
+from CBF import *
 
 # Display Content on the sidebar
 st.write("""
@@ -10,3 +11,5 @@ sidebar()
 
 #Display Content on the right side
 display_top()
+
+name()
