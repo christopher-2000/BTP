@@ -6,6 +6,8 @@ import streamlit as st
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
 def display_top():
-    st.markdown("Top 5 Universites according to QS world rankings")
+    st.write("""
+    ## Top 5 Universites according to QS world rankings 2020
+    """)
     for i in range(5):
-        st.text("{}. {} {}".format(i+1,data["Institution Name"][i],data["Overall Score"][i]))
+        st.markdown("{}. {} {}".format(i+1,data["Institution Name"][i],data["Overall Score"][i]))

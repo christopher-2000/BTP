@@ -7,9 +7,8 @@ st.write("""
     # University Recommendation System
     ### Btech Project 
     """)
-sidebar()
 
+sidebar()
 #Display Content on the right side
 display_top()
 
-name()
