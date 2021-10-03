@@ -2,17 +2,19 @@ import streamlit as st
 from options import *
 from CF import *
 from CBF import *
-
+from pandas import read_csv
 from sess import SessionState
+
+data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
 def sidebar():
     
     name = st.sidebar.text_input(
         'Enter your name')
 
-    col_type = st.sidebar.selectbox(
-        'Choose the type of college',
-        COL_TYPES)
+    dream_col = st.sidebar.selectbox(
+        'Choose your dream college',
+        data["Institution Name"])
 
     cgpa = st.sidebar.number_input(
         'Enter your CGPA'
@@ -37,11 +39,12 @@ def sidebar():
     if rec_button.button('Recommend Universities'):
         ss.rec_button = True
 
-    if ss.rec_button:  
+    if ss.rec_button:
+        st.write("Choose Your Method for recommendation")  
         if st.button('Collaborative Filtering') is True:
             cf_recommend([greV,greQ,greA,cgpa])
         if st.button('Content based Filtering') is True:
-            cf_recommend([greV,greQ,greA,cgpa])
+            cbf_recommend(dream_col)
         if st.button('Hybrid') is True:
             cf_recommend([greV,greQ,greA,cgpa])
         

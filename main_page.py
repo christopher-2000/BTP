@@ -11,3 +11,9 @@ def display_top():
     """)
     for i in range(5):
         st.markdown("{}. {} {}".format(i+1,data["Institution Name"][i],data["Overall Score"][i]))
+
+def search_college():
+    st.selectbox('Search for a college',data["Institution Name"])
+    if st.button('Search'):
+        pass
+

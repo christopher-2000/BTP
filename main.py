@@ -11,4 +11,5 @@ st.write("""
 sidebar()
 #Display Content on the right side
 display_top()
+search_college()
 
