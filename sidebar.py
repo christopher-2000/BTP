@@ -46,7 +46,7 @@ def sidebar():
         if st.button('Content based Filtering') is True:
             cbf_recommend(dream_col)
         if st.button('Hybrid') is True:
-            cf_recommend([greV,greQ,greA,cgpa])
+            hybrid_recommend([greV,greQ,greA,cgpa])
         
 def trial():
     button1 = st.empty()
