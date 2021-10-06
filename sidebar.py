@@ -2,6 +2,7 @@ import streamlit as st
 from options import *
 from CF import *
 from CBF import *
+from hybrid import*
 from pandas import read_csv
 from sess import SessionState
 

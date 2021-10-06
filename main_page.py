@@ -1,8 +1,7 @@
 from pandas import read_csv
 import streamlit as st
+from college_view import*
 
-from pandas import read_csv
-import streamlit as st
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
 def display_top():
@@ -13,7 +12,7 @@ def display_top():
         st.markdown("{}. {} {}".format(i+1,data["Institution Name"][i],data["Overall Score"][i]))
 
 def search_college():
-    st.selectbox('Search for a college',data["Institution Name"])
+    college = st.selectbox('Search for a college',data["Institution Name"])
     if st.button('Search'):
-        pass
+        display_college(college)
 
