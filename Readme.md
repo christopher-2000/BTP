@@ -1,16 +1,17 @@
 # University Recommendation System
 ### Group 13
-Tijo Thomas
-Rumaise Puthumannil
-M G Christopher
-Muhammed Nihal KV
+Tijo Thomas <br>
+Rumaise Puthumannil <br>
+M G Christopher <br>
+Muhammed Nihal KV 
 ### Guided by:
-Dr Shajulin Benedict
+Dr Shajulin Benedict<br>
 
 Dependencies:
+```
 pip install streamlit
 pip install pandas
-
+```
 To run:
 ```
 git clone https://github.com/christopher-2000/BTP.git
