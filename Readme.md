@@ -10,6 +10,7 @@ Muhammed Nihal KV
 Dr Shajulin Benedict<br>
 
 Dependencies:
+
 ```
 pip install streamlit
 pip install pandas
