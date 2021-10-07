@@ -41,7 +41,7 @@ def sidebar():
         ss.rec_button = True
 
     if ss.rec_button:
-        st.write("Choose Your Method for recommendation")  
+        st.write("Hey "+ name +", Choose Your Method for recommendation")  
         if st.button('Collaborative Filtering') is True:
             cf_recommend([greV,greQ,greA,cgpa])
         if st.button('Content based Filtering') is True:
