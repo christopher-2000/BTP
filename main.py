@@ -5,7 +5,7 @@ from CBF import *
 # Display Content on the sidebar
 st.write("""
     # University Recommendation System
-    ### Btech Project 
+    ### Btech Project - Group 13 
     """)
 
 sidebar()
