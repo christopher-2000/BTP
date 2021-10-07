@@ -18,20 +18,20 @@ def sidebar():
         data["Institution Name"])
 
     cgpa = st.sidebar.number_input(
-        'Enter your CGPA'
+        'Enter your CGPA(Out of 4)'
     )
     st.sidebar.text(
         'Enter your GRE scores'
     )
     greV = st.sidebar.number_input(
-        'greV'
+        'greV(Out of 170)'
     )
     greQ = st.sidebar.number_input(
-        'greQ'
+        'greQ(Out of 170)'
     )
 
     greA = st.sidebar.number_input(
-        'greA'
+        'greA(Out of 6)'
     )
 
     rec_button = st.sidebar.empty()
