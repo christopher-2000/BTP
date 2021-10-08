@@ -6,5 +6,5 @@ data = read_csv("data/cf_data.csv")
 
 def hybrid_recommend(val):
     st.markdown("Recommended List of Colleges using Hybrid filtering")
-    st.markdown("Work in progress")
+    st.markdown("Work in progress by nihal")
         
