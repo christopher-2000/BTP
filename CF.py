@@ -8,11 +8,11 @@ data = read_csv("data/cf_data.csv")
 def display_cfhead():
     st.dataframe(data.head())
 
-def cf_recommend(val):
+def cf_recommend(val,flag):
     #st.text("Recommended List of Colleges")
     if val == [0,0,0,0]:
         return st.markdown("Please Enter Valid Scores")
-    st.markdown("Recommended List of Colleges using Collaborative filtering")
+    
     rowList = [list(row) for row in data.values]
     colleges = []
     for i in range(len(rowList)):
@@ -28,12 +28,16 @@ def cf_recommend(val):
             fin_20.append(colleges_sorted[n])
             check.add(colleges_sorted[n][1])
         n+=1
-    col = []
-    for i in range(10):
-        col = [[str(i+1)+" ." + fin_20[i][1]+" ",fin_20[i][0]]] + col
-        #st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
-    vals = DataFrame(col,columns=['University','Score'])
-    st.write(drawGraph(vals,'Score','University','Score'))
+    if flag:
+        st.markdown("Recommended List of Colleges using Collaborative filtering")
+        col = []
+        for i in range(10):
+            col = [[str(i+1)+" ." + fin_20[i][1]+" ",fin_20[i][0]]] + col
+            #st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
+        vals = DataFrame(col,columns=['University','Score'])
+        st.write(drawGraph(vals,'Score','University','Score'))
+    else:
+        return fin_20
     
     
         

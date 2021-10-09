@@ -5,8 +5,9 @@ from math import isnan
 from operations import*
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
-def cbf_recommend(val):
-    st.markdown("Recommended List of Colleges using Content based filtering")
+def cbf_recommend(val,flag):
+    if flag:
+        st.markdown("Recommended List of Colleges using Content based filtering")
     rowList = [list(row) for row in data.values]
     curr = data[data["Institution Name"] == val].values[0]
 
