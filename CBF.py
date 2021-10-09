@@ -23,7 +23,8 @@ def cbf_recommend(val,flag=True):
                 f.append(type_change(x)) 
 
         #print(f)
-        sim = cosine_sim(curr,f)
+        
+        sim = pearson(curr,f)
         colleges.append([sim,rowList[i][1]])
 
     colleges_sorted = sorted(colleges)[::-1]

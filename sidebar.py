@@ -18,20 +18,20 @@ def sidebar():
         data["Institution Name"])
 
     cgpa = st.sidebar.number_input(
-        'Enter your CGPA(Out of 4)',3.0
+        'Enter your CGPA(Out of 4)',1.0
     )
     st.sidebar.text(
         'Enter your GRE scores'
     )
     greV = st.sidebar.number_input(
-        'greV(Out of 170)',160
+        'greV(Out of 170)',130.0
     )
     greQ = st.sidebar.number_input(
-        'greQ(Out of 170)',150
+        'greQ(Out of 170)',130.0
     )
 
     greA = st.sidebar.number_input(
-        'greA(Out of 6)',5.0
+        'greA(Out of 6)',1.0
     )
 
     rec_button = st.sidebar.empty()
@@ -42,13 +42,19 @@ def sidebar():
 
     if ss.rec_button:
         st.success("Hey "+ name +", Choose Your Method for recommendation")  
-        if st.button('Collaborative Filtering') is True:
-            cf_recommend([greV,greQ,greA,cgpa])
-        if st.button('Content based Filtering') is True:
-            cbf_recommend(dream_col)
-        if st.button('Hybrid') is True:
-            hybrid_recommend([greV,greQ,greA,cgpa])
+        choice = st.radio(
+            "", 
+            ('Collaborative Filtering','Content based Filtering','Hybrid')
+            )  
         
+        if st.button("Recommend") is True:
+            if choice=='Collaborative Filtering':
+                cf_recommend([greV,greQ,greA,cgpa])
+            if choice =='Content based Filtering':
+                cbf_recommend(dream_col)
+            if choice=='Hybrid':
+                hybrid_recommend([greV,greQ,greA,cgpa])
+'''
 def trial():
     button1 = st.empty()
     text1 = st.empty()
@@ -64,3 +70,4 @@ def trial():
         text1.write('you clicked the first button')
         if button2.button('2'):
             text2.write('you clicked the second button')
+'''

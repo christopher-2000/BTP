@@ -6,19 +6,29 @@ def dot(x,y,d1,d2):
         ans+=((x[i]-d1)*(y[i]-d2))
     return ans
 
+def euclidean(x,y):
+    ans=0
+    div = root_sum([40,40,5,3])
 
-def root_sum(x,d):
+    for i,j in zip(x,y):
+        ans+=pow(i-j,2)
+    return 1 - (pow(ans,0.5)/div)
+
+def root_sum(x,d=0):
     ans = 0
     for i in x:
         ans += pow(i-d,2)
-    
-    return pow(ans,0.5)
+    ans = pow(ans,0.5)
+    if ans==0:
+        return 1
+    else:
+        return ans
 
 def avg(x):
     return sum(x)/len(x)
 
 def cosine_sim(x,y):
-    val = dot(x,y,0,0)/(1+ root_sum(x,0)*root_sum(y,0))
+    val = dot(x,y,0,0)/(root_sum(x,0)*root_sum(y,0))
     return val
 
 def pearson(x,y):

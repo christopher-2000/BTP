@@ -16,16 +16,20 @@ def cf_recommend(val,flag=True):
     rowList = [list(row) for row in data.values]
     colleges = []
     for i in range(len(rowList)):
-        sim = pearson(val,rowList[i][1:5])
+        # Similarity Finding
+        sim = cosine_sim(val,rowList[i][1:5])
         colleges.append([sim,rowList[i][5]])
+        if(sim>=0.99999):
+            print('hello',val,rowList[i][1:5])
+    #print(colleges)
     check = set()
     colleges_sorted = sorted(colleges,key = lambda x: x[0])[::-1]
-    fin_20 = []
+    final_cols = []
     n = 0
-
+    
     while n<len(colleges_sorted):
         if colleges_sorted[n][1] not in check:
-            fin_20.append(colleges_sorted[n])
+            final_cols.append(colleges_sorted[n])
             check.add(colleges_sorted[n][1])
         n+=1
 
@@ -33,12 +37,13 @@ def cf_recommend(val,flag=True):
         st.markdown("Recommended List of Colleges using Collaborative filtering")
         col = []
         for i in range(10):
-            col = [[str(i+1)+" ." + fin_20[i][1]+" ",fin_20[i][0]]] + col
+            col = [[str(i+1)+" ." + final_cols[i][1]+" ",final_cols[i][0]]] + col
             #st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
+        
         vals = DataFrame(col,columns=['University','Score'])
         st.write(drawGraph(vals,'Score','University','Score'))
     else:
-        return fin_20
+        return final_cols
     
     
         
