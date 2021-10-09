@@ -1,5 +1,6 @@
 import streamlit as st
 from pandas import read_csv
+from pandas import DataFrame
 from math import isnan
 from operations import*
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
@@ -26,8 +27,13 @@ def cbf_recommend(val):
 
     colleges_sorted = sorted(colleges)[::-1]
     
-    
+    col = []
     for i in range(10):
-        st.text("{}. {} {}".format(i+1,colleges_sorted[i][1],colleges_sorted[i][0])) 
+        col = [[str(i+1)+" ." + colleges_sorted[i][1]+" ",colleges_sorted[i][0]]] + col
+        #st.text("{}. {} {}".format(i+1,colleges_sorted[i][1],colleges_sorted[i][0])) 
+    vals = DataFrame(col,columns=['University','Score'])
+
+    st.write(drawGraph(vals,'Score','University','Score'))
+        
     
 

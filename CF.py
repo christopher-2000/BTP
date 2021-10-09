@@ -1,4 +1,6 @@
 from pandas import read_csv
+from pandas import DataFrame
+import plotly.express as px
 import streamlit as st
 from operations import*
 data = read_csv("data/cf_data.csv")
@@ -26,8 +28,13 @@ def cf_recommend(val):
             fin_20.append(colleges_sorted[n])
             check.add(colleges_sorted[n][1])
         n+=1
-
+    col = []
     for i in range(10):
-        st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
+        col = [[str(i+1)+" ." + fin_20[i][1]+" ",fin_20[i][0]]] + col
+        #st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
+    vals = DataFrame(col,columns=['University','Score'])
+    st.write(drawGraph(vals,'Score','University','Score'))
+    
+    
         
 

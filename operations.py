@@ -1,3 +1,5 @@
+import plotly.express as px
+
 def dot(x,y,d1,d2):
     ans = 0
     for i in range(len(x)):
@@ -20,7 +22,7 @@ def cosine_sim(x,y):
     return val
 
 def pearson(x,y):
-    return dot(x,y,avg(x),avg(y))/(1+ root_sum(x,avg(x))*root_sum(y,avg(y)))
+    return dot(x,y,avg(x),avg(y))/(root_sum(x,avg(x))*root_sum(y,avg(y)))
 
 def type_change(s):
         
@@ -32,7 +34,12 @@ def type_change(s):
         except:
             return 10
         
-        
+
+def drawGraph(d,x,y,c):
+    graph = px.bar(d,x=x,y=y,color=c)
+    graph.update_xaxes(showgrid=False)
+    graph.update_yaxes(showgrid=False)
+    return graph
     
 
 
