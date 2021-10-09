@@ -18,20 +18,20 @@ def sidebar():
         data["Institution Name"])
 
     cgpa = st.sidebar.number_input(
-        'Enter your CGPA(Out of 4)'
+        'Enter your CGPA(Out of 4)',3.0
     )
     st.sidebar.text(
         'Enter your GRE scores'
     )
     greV = st.sidebar.number_input(
-        'greV(Out of 170)'
+        'greV(Out of 170)',160
     )
     greQ = st.sidebar.number_input(
-        'greQ(Out of 170)'
+        'greQ(Out of 170)',150
     )
 
     greA = st.sidebar.number_input(
-        'greA(Out of 6)'
+        'greA(Out of 6)',5.0
     )
 
     rec_button = st.sidebar.empty()
@@ -41,7 +41,7 @@ def sidebar():
         ss.rec_button = True
 
     if ss.rec_button:
-        st.write("Hey "+ name +", Choose Your Method for recommendation")  
+        st.success("Hey "+ name +", Choose Your Method for recommendation")  
         if st.button('Collaborative Filtering') is True:
             cf_recommend([greV,greQ,greA,cgpa])
         if st.button('Content based Filtering') is True:

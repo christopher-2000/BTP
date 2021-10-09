@@ -5,8 +5,9 @@ from CBF import *
 # Display Content on the sidebar
 st.write("""
     # University Recommendation System
-    ### Btech Project - Group 13 
+    ### Btech Project - Group 13  
     """)
+st.info(" <<<< Edit Your Scores in sidebar and Press Recommend Button ")
 
 sidebar()
 #Display Content on the right side
