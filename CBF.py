@@ -5,7 +5,7 @@ from math import isnan
 from operations import*
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 
-def cbf_recommend(val,flag):
+def cbf_recommend(val,flag=True):
     if flag:
         st.markdown("Recommended List of Colleges using Content based filtering")
     rowList = [list(row) for row in data.values]
