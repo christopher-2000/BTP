@@ -28,6 +28,7 @@ def cf_recommend(val,flag):
             fin_20.append(colleges_sorted[n])
             check.add(colleges_sorted[n][1])
         n+=1
+        
     if flag:
         st.markdown("Recommended List of Colleges using Collaborative filtering")
         col = []
