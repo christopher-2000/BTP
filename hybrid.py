@@ -8,7 +8,14 @@ data = read_csv("data/cf_data.csv")
 def hybrid_recommend(val):
     st.markdown("Recommended List of Colleges using Hybrid filtering")
     cols = cf_recommend(val,False)
-    first = cols[0]
-    cbf_recommend(first[1],False)
+    i = 0
+    while True:
+        first = cols[i]
+        try:
+            cbf_recommend(first[1],False)
+            break
+        except:
+            i+=1
+
     
         
