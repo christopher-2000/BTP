@@ -13,6 +13,6 @@ def display_top():
 
 def search_college():
     college = st.selectbox('Search for a college',data["Institution Name"])
-    if st.button('Search'):
+    if st.button('Search now'):
         display_college(college)
 
