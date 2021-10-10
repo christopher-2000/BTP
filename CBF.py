@@ -21,8 +21,8 @@ def cbf_recommend(val,flag=True):
                 f.append(10)
             else:
                 f.append(type_change(x)) 
-
         #print(f)
+        
         
         sim = pearson(curr,f)
         colleges.append([sim,rowList[i][1]])
