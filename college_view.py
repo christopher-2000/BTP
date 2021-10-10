@@ -8,9 +8,18 @@ shiksha_data = read_csv("data/display_data.csv")
 def display_college(college):
     entry = data[data['Institution Name'] == college].values[0]
     cols = [i for i in data]
-    for i,j in zip(entry[:8],cols[:8]):
-        st.write(j+":"+str(i))
 
+    dis={}
+    for i,j in zip(entry[:8],cols[:8]):
+        dis[j]=str(i)
+    abbrev = { 'VH': 'Very High', 'HI': 'High', 'MD': 'Medium', 'LO': 'Low'}
+
+    st.markdown("### **{}**".format(dis['Institution Name']))
+    st.markdown("##### {}".format(dis['Unnamed: 2']))
+    st.markdown("##### Rank in 2020: {}".format(dis['Rank in 2020']))
+    st.markdown("##### Age: {}".format(dis['AGE']))
+    st.markdown("##### RESEARCH INTENSITY: {}".format(abbrev[dis['RESEARCH INTENSITY']]))
+    st.markdown("#####  {} University".format(dis['STATUS']))
     req=cols[8:]
     df=[]
 
