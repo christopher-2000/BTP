@@ -16,9 +16,9 @@ def display_college(college):
         dis[j]=str(i)
     abbrev = { 'VH': 'Very High', 'HI': 'High', 'MD': 'Medium', 'LO': 'Low'}
 
-    st.markdown("## **{}**".format(dis['Institution Name']))
-    st.markdown("#### {}".format(dis['Unnamed: 2']))
-    st.markdown("#### Rank in 2020: #{} ".format(dis['Rank in 2020']))
+    st.markdown("### **{}**".format(dis['Institution Name']))
+    st.markdown("##### {}".format(dis['Unnamed: 2']))
+    st.markdown("##### Rank in 2020: #{} ".format(dis['Rank in 2020']))
     annotated_text(
         ('AGE' + " : "+dis['AGE'],"","#fca311","#000"),
         "  ",
