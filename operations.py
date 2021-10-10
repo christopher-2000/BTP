@@ -45,7 +45,7 @@ def type_change(s):
             return 10
         
 
-def drawGraph(d,x,y,c):
+def drawGraph(d,x,y,c=None):
     graph = px.bar(d,x=x,y=y,color=c)
     graph.update_xaxes(showgrid=False)
     graph.update_yaxes(showgrid=False)
