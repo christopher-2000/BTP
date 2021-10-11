@@ -2,6 +2,8 @@ from pandas import read_csv,DataFrame
 import streamlit as st
 import time
 from operations import*
+from annotated_text import annotated_text
+
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 shiksha_data = read_csv("data/display_data.csv")
 
@@ -16,11 +18,23 @@ def display_college(college):
 
     st.markdown("### **{}**".format(dis['Institution Name']))
     st.markdown("##### {}".format(dis['Unnamed: 2']))
+<<<<<<< HEAD
     st.markdown("##### Rank in 2020: {}".format(dis['Rank in 2020']))
     st.markdown("##### Age: {}".format(dis['AGE']))
     st.markdown("##### RESEARCH INTENSITY: {}".format(abbrev[dis['RESEARCH INTENSITY']]))
     st.markdown("#####  {} University".format(dis['STATUS']))
     
+=======
+    st.markdown("##### Rank in 2020: #{} ".format(dis['Rank in 2020']))
+    annotated_text(
+        ('AGE' + " : "+dis['AGE'],"","#fca311","#000"),
+        "  ",
+        ('RESEARCH INTENSITY' + " : "+ abbrev[dis['RESEARCH INTENSITY']],"","#d62828","fff"),
+        "  ",
+        (dis['STATUS']+ " - "+ 'University',"","#8ef","#000")
+        
+    )
+>>>>>>> d86d10935b027f21905d42d7d5559e47045e309b
     req=cols[8:]
     df=[]
 
@@ -34,6 +48,8 @@ def display_college(college):
         shiksha_entry = shiksha_data[shiksha_data['college']==college].values[0]
         for i in shiksha_entry:
             st.text(" ".join([p for p in str(i).split(" ") if p!='' and p!='\n']))
+    
+    
 
 
         
