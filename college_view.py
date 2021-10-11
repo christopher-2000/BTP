@@ -20,6 +20,7 @@ def display_college(college):
     st.markdown("##### Age: {}".format(dis['AGE']))
     st.markdown("##### RESEARCH INTENSITY: {}".format(abbrev[dis['RESEARCH INTENSITY']]))
     st.markdown("#####  {} University".format(dis['STATUS']))
+    
     req=cols[8:]
     df=[]
 
