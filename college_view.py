@@ -18,13 +18,6 @@ def display_college(college):
 
     st.markdown("### **{}**".format(dis['Institution Name']))
     st.markdown("##### {}".format(dis['Unnamed: 2']))
-<<<<<<< HEAD
-    st.markdown("##### Rank in 2020: {}".format(dis['Rank in 2020']))
-    st.markdown("##### Age: {}".format(dis['AGE']))
-    st.markdown("##### RESEARCH INTENSITY: {}".format(abbrev[dis['RESEARCH INTENSITY']]))
-    st.markdown("#####  {} University".format(dis['STATUS']))
-    
-=======
     st.markdown("##### Rank in 2020: #{} ".format(dis['Rank in 2020']))
     annotated_text(
         ('AGE' + " : "+dis['AGE'],"","#fca311","#000"),
@@ -34,7 +27,6 @@ def display_college(college):
         (dis['STATUS']+ " - "+ 'University',"","#8ef","#000")
         
     )
->>>>>>> d86d10935b027f21905d42d7d5559e47045e309b
     req=cols[8:]
     df=[]
 
