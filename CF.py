@@ -8,7 +8,7 @@ data = read_csv("data/cf_data.csv")
 def display_cfhead():
     st.dataframe(data.head())
 
-def cf_recommend(val,flag=True):
+def cf_recommend(val,flag=True,algo='cosine'):
     #st.text("Recommended List of Colleges")
     if val == [0,0,0,0]:
         return st.markdown("Please Enter Valid Scores")
@@ -17,10 +17,12 @@ def cf_recommend(val,flag=True):
     colleges = []
     for i in range(len(rowList)):
         # Similarity Finding
-        sim = cosine_sim(val,rowList[i][1:5])
+        if algo=='cosine':
+            sim = cosine_sim(val,rowList[i][1:5])
+        else:
+            sim = euclidean(val,rowList[i][1:5])
         colleges.append([sim,rowList[i][5]])
-        if(sim>=0.99999):
-            print('hello',val,rowList[i][1:5])
+        
     #print(colleges)
     check = set()
     colleges_sorted = sorted(colleges,key = lambda x: x[0])[::-1]
