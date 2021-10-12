@@ -23,7 +23,7 @@ def cf_recommend(val,flag=True,algo='cosine'):
             sim = euclidean(val,rowList[i][1:5])
         colleges.append([sim,rowList[i][5]])
         
-    #print(colleges)
+    #sorted list of colleges
     check = set()
     colleges_sorted = sorted(colleges,key = lambda x: x[0])[::-1]
     final_cols = []
