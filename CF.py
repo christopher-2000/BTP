@@ -48,5 +48,3 @@ def cf_recommend(val,flag=True,algo='cosine'):
         return final_cols
     
     
-        
-

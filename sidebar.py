@@ -44,14 +44,13 @@ def sidebar():
         st.success("Hey "+ name +", Choose Your Method for recommendation")  
         choice = st.radio(
             "", 
-            ('Collaborative Filtering(Cosine Similarity)','Collaborative Filtering(Euclidean)','Content based Filtering','Hybrid')
+            ('Collaborative Filtering','Content based Filtering','Hybrid')
             )  
         
         if st.button("Recommend") is True:
-            if choice=='Collaborative Filtering(Cosine Similarity)':
+            if choice=='Collaborative Filtering':
                 cf_recommend([greV,greQ,greA,cgpa],algo='cosine')
-            if choice=='Collaborative Filtering(Euclidean)':
-                cf_recommend([greV,greQ,greA,cgpa],algo='euclidean')
+
             if choice =='Content based Filtering':
                 cbf_recommend(dream_col)
             if choice=='Hybrid':
