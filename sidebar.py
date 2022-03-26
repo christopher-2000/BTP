@@ -2,6 +2,8 @@ import streamlit as st
 from options import *
 from CF import *
 from CBF import *
+from XG_Boost import *
+from Cat_boost import *
 from hybrid import*
 from pandas import read_csv
 from sess import SessionState
@@ -44,7 +46,7 @@ def sidebar():
         st.success("Hey "+ name +", Choose Your Method for recommendation")  
         choice = st.radio(
             "", 
-            ('Collaborative Filtering','Content based Filtering','Hybrid')
+            ('Collaborative Filtering','Content based Filtering','Hybrid','Neural Network','XGBoost','Cat Boost')
             )  
         
         if st.button("Recommend") is True:
@@ -55,6 +57,12 @@ def sidebar():
                 cbf_recommend(dream_col)
             if choice=='Hybrid':
                 hybrid_recommend([greV,greQ,greA,cgpa])
+            if choice=='Neural Network':
+                hybrid_recommend([greV,greQ,greA,cgpa])
+            if choice=='XGboost':
+                xg_recommend([greV,greQ,greA,cgpa])
+            if choice=='Cat Boost':
+                cat_recommend([greV,greQ,greA,cgpa],dream_col)
 '''
 def trial():
     button1 = st.empty()

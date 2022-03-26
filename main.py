@@ -11,6 +11,7 @@ st.info(" <<<< Edit Your Scores in sidebar and Press Recommend Button ")
 
 sidebar()
 #Display Content on the right side
+
 display_top()
 search_college()
 
