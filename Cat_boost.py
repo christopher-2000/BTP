@@ -7,7 +7,7 @@ import pickle
 cat_model = cat.CatBoostClassifier(task_type='CPU', iterations=50, 
                               random_state = 2021, 
                               eval_metric="Accuracy")
-cat_model.load_model('./data/Cat_boost.json')
+cat_model.load_model('data/Cat_boost.json')
 dataset = pd.read_csv('data/data_classify2.csv')
 
 def cat_recommend(data,fav):
