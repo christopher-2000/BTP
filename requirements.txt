@@ -2,4 +2,4 @@ plotly
 st-annotated-text
 xgboost
 catboost
-sklearn
+scikit-learn
