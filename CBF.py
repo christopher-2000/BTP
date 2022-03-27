@@ -34,7 +34,7 @@ def cbf_recommend(val,flag=True):
         col = [[str(i+1)+" ." + colleges_sorted[i][1]+" ",colleges_sorted[i][0]]] + col
         #st.text("{}. {} {}".format(i+1,colleges_sorted[i][1],colleges_sorted[i][0])) 
     vals = DataFrame(col,columns=['University','Score'])
-
+    vals['Score'] = vals['Score']*100
     st.write(drawGraph(vals,'Score','University','Score'))
         
     

@@ -49,7 +49,7 @@ def drawGraph(d,x,y,c=None):
     graph = px.bar(d,x=x,y=y,color=c)
     graph.update_xaxes(showgrid=False)
     graph.update_yaxes(showgrid=False)
-    graph.update_layout(xaxis_range=[0,1])
+    graph.update_layout(xaxis_range=[0,100])
     return graph
     
 

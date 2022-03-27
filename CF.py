@@ -41,8 +41,8 @@ def cf_recommend(val,flag=True,algo='cosine'):
         for i in range(10):
             col = [[str(i+1)+" ." + final_cols[i][1]+" ",final_cols[i][0]]] + col
             #st.text("{}. {} {}".format(i+1,fin_20[i][1],fin_20[i][0])) 
-        
         vals = DataFrame(col,columns=['University','Score'])
+        vals['Score'] = vals['Score']*100
         st.write(drawGraph(vals,'Score','University','Score'))
     else:
         return final_cols
