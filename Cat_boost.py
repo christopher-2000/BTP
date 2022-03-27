@@ -23,7 +23,8 @@ def cat_recommend(data,fav):
         test.append(temp + [i])
     results = pd.DataFrame(cat_model.predict_proba(test),columns=['Reject','Accept'])
     results = pd.concat([pd.DataFrame(dataset['university'].unique(),columns=['university']), results],axis=1)
-    
+    results[['Accept','Reject']] = results[['Accept','Reject']]*100
+
     acc_chance = results.sort_values('Accept')[:10]
     rej_chance = results.sort_values('Reject')[:10]
     st.write("Universities with Lowest chance of Acceptance")
@@ -33,7 +34,7 @@ def cat_recommend(data,fav):
     st.write(drawGraph(rej_chance,'Accept','university','Accept'))
     
     fav_chance = results[results['university']==fav]['Accept'].values[0]
-    st.write("Chance of Acceptance into the dream college ({}): {:.2f}%".format(fav,fav_chance*100))
+    st.write("Chance of Acceptance into the dream college ({}): {:.2f}%".format(fav,fav_chance))
 
 
 
