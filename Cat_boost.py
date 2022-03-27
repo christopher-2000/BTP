@@ -26,10 +26,10 @@ def cat_recommend(data,fav):
     
     acc_chance = results.sort_values('Accept')[:10]
     rej_chance = results.sort_values('Reject')[:10]
-    st.write("Lowest chance of Acceptance")
+    st.write("Universities with Lowest chance of Acceptance")
     st.write(drawGraph(acc_chance,'Accept','university','Accept'))
 
-    st.write("Highest chance of Acceptance")
+    st.write("Universities with Highest chance of Acceptance")
     st.write(drawGraph(rej_chance,'Accept','university','Accept'))
     
     fav_chance = results[results['university']==fav]['Accept'].values[0]
