@@ -46,7 +46,7 @@ def sidebar():
         st.success("Hey "+ name +", Choose Your Method for recommendation")  
         choice = st.radio(
             "", 
-            ('Collaborative Filtering','Content based Filtering','Hybrid','Neural Network','XGBoost','Cat Boost')
+            ('Collaborative Filtering','Content based Filtering','Hybrid','Neural Network','Cat Boost')
             )  
         
         if st.button("Recommend") is True:
