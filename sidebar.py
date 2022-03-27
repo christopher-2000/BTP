@@ -2,7 +2,6 @@ import streamlit as st
 from options import *
 from CF import *
 from CBF import *
-from XG_Boost import *
 from Cat_boost import *
 from hybrid import*
 from pandas import read_csv
