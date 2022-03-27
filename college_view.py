@@ -1,11 +1,7 @@
-from ast import excepthandler
-from turtle import color
 from pandas import read_csv,DataFrame
 import streamlit as st
-import time
 from operations import*
 from annotated_text import annotated_text
-from sess import SessionState
 
 data = read_csv("data/cbf_data.csv",encoding='ISO-8859-1')
 shiksha_data = read_csv("data/display_data.csv")
