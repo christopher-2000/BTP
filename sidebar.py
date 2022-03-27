@@ -59,8 +59,6 @@ def sidebar():
                 hybrid_recommend([greV,greQ,greA,cgpa])
             if choice=='Neural Network':
                 hybrid_recommend([greV,greQ,greA,cgpa])
-            if choice=='XGboost':
-                xg_recommend([greV,greQ,greA,cgpa])
             if choice=='Cat Boost':
                 cat_recommend([greV,greQ,greA,cgpa],dream_col)
 '''
