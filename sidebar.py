@@ -17,7 +17,7 @@ def sidebar():
 
     dream_col = st.sidebar.selectbox(
         'Choose your dream college',
-        data["Institution Name"])
+        data["Institution Name"][1:])
 
     cgpa = st.sidebar.number_input(
         'Enter your CGPA(Out of 4)',1.0
