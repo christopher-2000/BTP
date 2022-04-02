@@ -45,18 +45,15 @@ def sidebar():
         st.success("Hey "+ name +", Choose Your Method for recommendation")  
         choice = st.radio(
             "", 
-            ('Collaborative Filtering','Content based Filtering','Hybrid','Neural Network','Cat Boost')
+            ('Collaborative Filtering','Content based Filtering','Hybrid','Cat Boost')
             )  
         
         if st.button("Recommend") is True:
             if choice=='Collaborative Filtering':
                 cf_recommend([greV,greQ,greA,cgpa],algo='cosine')
-
             if choice =='Content based Filtering':
                 cbf_recommend(dream_col)
             if choice=='Hybrid':
-                hybrid_recommend([greV,greQ,greA,cgpa])
-            if choice=='Neural Network':
                 hybrid_recommend([greV,greQ,greA,cgpa])
             if choice=='Cat Boost':
                 cat_recommend([greV,greQ,greA,cgpa],dream_col)

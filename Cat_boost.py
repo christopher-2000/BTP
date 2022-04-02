@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from operations import*
 import catboost as cat
-import pickle
+
 
 cat_model = cat.CatBoostClassifier(task_type='CPU', iterations=50, 
                               random_state = 2021, 
